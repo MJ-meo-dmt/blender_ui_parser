@@ -1,6 +1,6 @@
 # blender_ui_parser
 A custom blender panel for the parser used in project: Lext
-#
+***
 
 ###Todo:
 - Add a check to avoid adding multiple properties to an object.
