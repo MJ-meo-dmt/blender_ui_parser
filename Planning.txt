@@ -1,0 +1,102 @@
+# Each object gets a id from the parser side!
+# player: 0, Objects: 1-1000, Lights: 1500-1600 ? Something like that
+# Parser side will fetch all lowercase names!!
+Player:
+	Name: <string>
+	Model: <string>
+	Move Force: <float>
+	Jump Force: <float>
+	Custom Script: <string>
+	State: <bool>
+
+Camera:
+	State: <bool>
+	LookAt: <string>
+
+Level:
+	Type:
+		Wall:
+			isCollisionMesh: <bool>
+			Custom Script: <string>
+		Ground:
+			isCollisionMesh: <bool>
+			isBulletPlane: <bool> ? (if not use tri-mesh)
+			Custom Script: <string>
+		Complex:
+			isCollisionMesh: <bool>
+		
+		LevelInfo:
+			Name: <string>
+			Gravity: <float><string>
+
+Object:
+	Name: <string>
+	Model: <string>
+	isDynamic: <bool>
+	SendEvent: <string>
+	RecvEvent: <string>
+	Custom Script: <string>
+	State: <bool>
+	Pickable: <bool>
+
+Light:
+	Type:
+		Point:
+			Model File: <string>
+			isDynamic: <bool>
+			Custom Script: <string>
+			Colour: <float><string> "1.0, 1.0, 1.0, 1.0" (',' split use)
+			State: <bool>
+
+		Ambient:
+			Custom Script: <string>
+			Colour: <float><string>
+			State: <bool>
+
+		Directional:
+			Custom Script: <string>
+			Colour: <float><string>
+			HPR: <float><string>
+			State: <bool>
+			
+		Spot:
+			Model File: <string>
+			State: <bool>
+			Colour: <float><string>
+			isDynamic: <bool>
+			Custom Script: <string>
+			LookAt: <string>
+			HPR: <float><string>
+
+Sensor:
+	Name: <string>
+	isDynamic: <bool>
+	Custom Script: <string>
+	SendEvent: <string>
+	RecvEvent: <string>
+	State: <bool>
+	Priority: <int> (-80)
+	Gravity: <float><string>
+		
+
+Door: (?Doors should be in a closed state when exported)
+	Name: <string>
+	isDynamic: <bool> (not making sense here yet)
+	Custom Script: <string>
+	SendEvent: <string>
+	RecvEvent: <string>
+	Rotate Amount: <float>
+	Rotate Axis: <string>
+	State: <bool>
+
+Lift:
+	Name: <string>
+	isDynamic: <bool>
+	State: <bool>
+	SendEvent: <string>
+	RecvEvent: <string>
+	Move Amount: <float>
+	Move Axis: <string>
+	Move Force: <float>
+	Priority: <int> (used for the task handling the move)
+

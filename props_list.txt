@@ -1,0 +1,35 @@
+
+<string>
+Name
+Model File
+Custom Script
+LookAt
+SendEvent
+RecvEvent
+Color
+HPR (For overwrite)
+Rotate Axis
+Move Axis
+Gravity
+</string>
+
+<float>
+Move Force
+Jump Force
+Rotate Amount
+Move Amount
+</float>
+
+<bool>
+State
+isCollisionMesh
+isBulletPlane
+isDynamic
+Pickable
+</bool>
+
+<int>
+Priority
+</int>
+
+
